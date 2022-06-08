@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Yanika's Portfolio</title>
+	<link rel="icon" href="/img/logo2.png" type="image/icon type">
+	<!-- Tailwind -->
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<!-- Alpine -->
+	<script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+	<script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+	<!-- AOS -->
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<!-- Custom style -->
+	<link rel="stylesheet" href="css/skilline.css" />
+	<!-- Poppins font -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+	<style>
+		html {
+			scroll-behavior: smooth;
+		}
+		/* CSS only for demo purpose*/
+		#btn-back-to-top {
+			position: fixed;
+			display: none;
+			scroll-behavior: smooth;
+		}
+	</style>
+</head>
+
+<body class="antialiased bg-white">
+	<!-- navbar -->
+	<div x-data="{ open: false }" class=" w-full text-gray-700 bg-indigo-50">
+		<div class="flex flex-col max-w-screen-xl px-8 mx-auto md:items-center md:justify-between md:flex-row">
+			<div class="flex flex-row items-center justify-between py-6">
+				<div class="relative md:mt-8">
+					<a href="#"
+						class="text-lg relative z-50 font-bold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">
+						<img class="w-24" src="img/logo.png" />
+					</a>
+				</div>
+				<button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+					<svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+						<path x-show="!open" fill-rule="evenodd"
+							d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+							clip-rule="evenodd"></path>
+						<path x-show="open" fill-rule="evenodd"
+							d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+							clip-rule="evenodd"></path>
+					</svg>
+				</button>
+			</div>
+
+			<nav :class="{ 'transform md:transform-none': !open, 'h-full': open }"
+				class="h-0 md:h-auto flex flex-col flex-grow md:items-center pb-4 md:pb-0 md:flex md:justify-end md:flex-row origin-top duration-300 scale-y-0">
+				<a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
+					href="#">Home</a>
+				<a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
+					href="#Work">Work Experiences</a>
+				<a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
+					href="#Act">Activities</a>
+				<a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-8 md:ml-4 hover:text-gray-900 focus:outline-none focus:shadow-outline"
+					href="#Contact">Contact Me</a>
+
+			</nav>
+		</div>
+	</div>
+
+	<!-- Back to top button -->
+	<button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light"
+		class="inline-block p-3 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-500 ease-in-out bottom-5 right-5"
+		id="btn-back-to-top">
+		<svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-4 h-4" role="img"
+			xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+			<path fill="currentColor"
+				d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z">
+			</path>
+		</svg>
+	</button>
+
+	<div class="bg-indigo-50">
+		<div class="max-w-screen-xl px-8 mx-auto flex flex-col lg:flex-row items-start">
+			<!--Left Col-->
+			<!-- Desktop -->
+			<div class="hidden lg:block">
+				<div class="w-full -mt-10 ml-28 relative" id="girl">
+					<img data-aos="fade-up" data-aos-once="true" class="w-80 mx-auto pt-28 2xl:-mb-20"
+						src="img/girl.png" />
+					<!-- ux class -->
+					<!-- <div data-aos="fade-up" data-aos-delay="500" data-aos-once="true" class="absolute bottom-14 -left-4 sm:left-2 sm:bottom-20 lg:bottom-24 lg:-left-4 floating">
+					<img class="bg-white bg-opacity-80 rounded-lg h-20 sm:h-28" src="img/ux-class.svg" alt="">
+				</div> -->
+				</div>
+			</div>
+
+			<!-- Mobile -->
+			<div class="block lg:hidden justify-center">
+				<div class="flex flex-col w-full justify-center items-start mt-8 relative">
+					<h1 data-aos="fade-right" data-aos-once="true" class="text-5xl font-bold leading-tight text-darken">
+						<span class="text-yellow-500">Hi</span> Welcome to my PORTFOLIO!
+					</h1>
+					<p data-aos="fade-down" data-aos-once="true" data-aos-delay="300"
+						class="leading-normal text-base mt-5">
+						My name is <span class="font-bold">Yanika Putorn</span> , but you can called me ' <span
+							class="font-bold">Dear</span> '. <br>
+						I am a student in the Faculty of Information Technology <br>
+						at King Mongkut’s University of Technology Thonburi (KMUTT).</p>
+				</div>
+			</div>
+
+			<!--Right Col-->
+			<!-- Desktop -->
+			<div class="hidden lg:block">
+				<div class="flex flex-col w-full justify-center items-start w-6/12 mr-20 mt-2 relative">
+					<h1 data-aos="fade-right" data-aos-once="true"
+						class="text-5xl font-bold leading-tight text-darken ml-60 mt-20">
+						<span class="text-yellow-500">Hi</span> Welcome to my PORTFOLIO!
+					</h1>
+					<p data-aos="fade-down" data-aos-once="true" data-aos-delay="300"
+						class="leading-normal text-base mb-8 ml-60 mt-5">
+						My name is <span class="font-bold">Yanika Putorn</span> , but you can called me ' <span
+							class="font-bold">Dear</span> '. <br>
+						I am a student in the Faculty of Information Technology <br>
+						at King Mongkut’s University of Technology Thonburi (KMUTT).</p>
+				</div>
+			</div>
+
+			<!-- Mobile -->
+			<div class="block lg:hidden grid justify-items-center">
+				<div class="w-full -mt-10 relative" id="girl">
+					<img data-aos="fade-up" data-aos-once="true" class="w-80 mx-auto pt-28 2xl:-mb-20"
+						src="img/girl.png" />
+				</div>
+			</div>
+
+		</div>
+		<div class="text-white -mt-14 sm:-mt-24 lg:-mt-36 z-40 relative">
+			<svg class="xl:h-40 xl:w-full" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+				preserveAspectRatio="none">
+				<path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
+					fill="currentColor"></path>
+			</svg>
+			<div class="bg-white w-full h-20 -mt-px"></div>
+		</div>
+	</div>
+
+	<!-- container -->
+	<div class="container px-4 lg:px-8 mx-auto max-w-screen-xl text-gray-700 overflow-hidden">
+
+		<!-- All-In-One Cloud Software. -->
+		<div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-10">
+			<h1 id="Work" class="font-bold text-darken my-3 text-2xl">Work <span class="text-yellow-500">Experiences</span></h1>
+			<p class="leading-relaxed text-gray-500">Since 2020 until 2022</p>
+		</div>
+		<!-- card -->
+		<div class="grid md:grid-cols-3 gap-14 md:gap-5 mt-20">
+			<div data-aos="fade-up" class="bg-white shadow-xl p-6 text-center rounded-xl">
+				<div style="background: #5B72EE;"
+					class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
+					<!-- <svg class="w-6 h-6 text-white" viewBox="0 0 33 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M24.75 23H8.25V28.75H24.75V23ZM32.3984 9.43359L23.9852 0.628906C23.5984 0.224609 23.0742 0 22.5242 0H22V11.5H33V10.952C33 10.3859 32.7852 9.83789 32.3984 9.43359ZM19.25 12.2188V0H2.0625C0.919531 0 0 0.961328 0 2.15625V43.8438C0 45.0387 0.919531 46 2.0625 46H30.9375C32.0805 46 33 45.0387 33 43.8438V14.375H21.3125C20.1781 14.375 19.25 13.4047 19.25 12.2188ZM5.5 6.46875C5.5 6.07164 5.80766 5.75 6.1875 5.75H13.0625C13.4423 5.75 13.75 6.07164 13.75 6.46875V7.90625C13.75 8.30336 13.4423 8.625 13.0625 8.625H6.1875C5.80766 8.625 5.5 8.30336 5.5 7.90625V6.46875ZM5.5 12.2188C5.5 11.8216 5.80766 11.5 6.1875 11.5H13.0625C13.4423 11.5 13.75 11.8216 13.75 12.2188V13.6562C13.75 14.0534 13.4423 14.375 13.0625 14.375H6.1875C5.80766 14.375 5.5 14.0534 5.5 13.6562V12.2188ZM27.5 39.5312C27.5 39.9284 27.1923 40.25 26.8125 40.25H19.9375C19.5577 40.25 19.25 39.9284 19.25 39.5312V38.0938C19.25 37.6966 19.5577 37.375 19.9375 37.375H26.8125C27.1923 37.375 27.5 37.6966 27.5 38.0938V39.5312ZM27.5 21.5625V30.1875C27.5 30.9817 26.8847 31.625 26.125 31.625H6.875C6.11531 31.625 5.5 30.9817 5.5 30.1875V21.5625C5.5 20.7683 6.11531 20.125 6.875 20.125H26.125C26.8847 20.125 27.5 20.7683 27.5 21.5625Z"
+							fill="white" />
+					</svg> -->
+					<img class="w-7" src="img/ux.png" />
+				</div>
+				<h1 class="font-medium text-xl mb-3 lg:px-14 text-darken">UX/UI & Graphic Designer</h1>
+				<p class="px-4 text-gray-500">Internship at MFEC Public Company Limited, so I do in position of UX/UI and Graphic Designer</p>
+			</div>
+			<div data-aos="fade-up" data-aos-delay="150" class="bg-white shadow-xl p-6 text-center rounded-xl">
+				<div style="background: #F48C06;"
+					class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
+					<img class="w-7" src="img/ux.png" />
+				</div>
+				<h1 class="font-medium text-xl mb-3 lg:px-14 text-darken">UX/UI Designer</h1>
+				<p class="px-4 text-gray-500">Web CeatSheet for IT KMUTT Student. It is a repository of summaries for subjects within the Faculty of
+					Information Technology juniors and everyone in the faculty.</p>
+			</div>
+			<div data-aos="fade-up" data-aos-delay="300" class="bg-white shadow-xl p-6 text-center rounded-xl">
+				<div style="background: #29B9E7;"
+					class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
+					<img class="w-7" src="img/vector.png" />
+				</div>
+				<h1 class="font-medium text-xl lg:px-14 text-darken h-10">Graphic Designer</h1>
+				<p class="px-4 text-gray-500">Project “Starter Pack for student SIT KMUTT”. It is a basic adjustment project for first-year juniors studies at the Faculty of
+					Information Technology.</p>
+			</div>
+		</div>
+
+		<div class="grid md:grid-cols-3 gap-14 md:gap-5 mt-32">
+			<div data-aos="fade-up" class="bg-white shadow-xl p-6 text-center rounded-xl">
+				<div style="background: #5B72EE;"
+					class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
+					<img class="w-7" src="img/multimedia.png" />
+				</div>
+				<h1 class="font-medium text-xl mb-3 lg:px-14 text-darken">Graphic Designer and Media</h1>
+				<p class="px-4 text-gray-500">Project “Starter Pack for student SIT KMUTT”. It is a basic adjustment project for first-year juniors studies at the Faculty of
+					Information Technology.</p>
+			</div>
+			<div data-aos="fade-up" data-aos-delay="150" class="bg-white shadow-xl p-6 text-center rounded-xl">
+				<div style="background: #F48C06;"
+					class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
+					<img class="w-7" src="img/window.png" />
+				</div>
+				<h1 class="font-medium text-xl mb-3 lg:px-14 text-darken">Integrated Project</h1>
+				<p class="px-4 text-gray-500">This is a experience in subject of course at my faculty to improve coding skills.
+					My role is a Backend developer to develop web application.
+				</p>
+			</div>
+			<div data-aos="fade-up" data-aos-delay="300" class="bg-white shadow-xl p-6 text-center rounded-xl">
+				<div style="background: #29B9E7;"
+					class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
+					<img class="w-7" src="img/working.png" />
+				</div>
+				<h1 class="font-medium text-xl lg:px-14 text-darken h-10">Freelance</h1>
+				<p class="px-4 text-gray-500">It's a graphic designer for general work consisting of web page
+					design and a design advertising media for some product.</p>
+			</div>
+		</div>
+
+		<!-- lorem -->
+		<div class="mt-28">
+			<div data-aos="flip-down" class="text-center max-w-screen-md mx-auto">
+				<h1 id="Act" class="text-3xl font-bold mb-4">My activities<span class="text-yellow-500"> in University</span></h1>
+				<p class="text-gray-500">I'm always looking for new hobbies or activities to do in my leisure time to help me reach my full potential at work. You can see it in the below.</p>
+			</div>
+			<!-- Card click -->
+			<!-- <div data-aos="fade-up"
+				class="flex flex-col md:flex-row justify-center space-y-5 md:space-y-0 md:space-x-6 lg:space-x-10 mt-7">
+				<div class="relative md:w-5/12">
+					<img class="rounded-2xl" src="img/Rectangle 19.png" alt="">
+					<div class="absolute bg-black bg-opacity-20 bottom-0 left-0 right-0 w-full h-full rounded-2xl">
+						<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+							<h1 class="uppercase text-white font-bold text-center text-sm lg:text-xl mb-3">FOR
+								INSTRUCTORS</h1>
+							<button
+								class="rounded-full text-white border text-xs lg:text-md px-6 py-3 w-full font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">Start
+								a class today</button>
+						</div>
+					</div>
+				</div>
+				<div class="relative md:w-5/12">
+					<img class="rounded-2xl" src="img/Rectangle 21.png" alt="">
+					<div class="absolute bg-black bg-opacity-20 bottom-0 left-0 right-0 w-full h-full rounded-2xl">
+						<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+							<h1 class="uppercase text-white font-bold text-center text-sm lg:text-xl mb-3">FOR STUDENTS
+							</h1>
+							<button
+								class="rounded-full text-white text-xs lg:text-md px-6 py-3 w-full font-medium focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out"
+								style="background: rgba(35, 189, 238, 0.9)">Enter access code</button>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="sm:flex items-center sm:space-x-8">
+			<div data-aos="fade-right" class="sm:w-1/2 relative">
+				<!-- <div class="bg-yellow-500 rounded-full absolute w-12 h-12 z-0 -left-4 -top-3 animate-pulse"></div>
+				<h1 class="font-semibold text-2xl relative z-50 text-darken lg:pr-10">SIT volunteer 2019
+					<span class="text-yellow-500"></span></h1>
+				<p class="py-5 lg:pr-32">Representing the development and providing academic knowledge to the youngsters At a school in Suphan Buri Province for 3 days, 2 nights.
+				</p> -->
+				<!-- <a href="" class="underline">Learn More</a> -->
+			</div>
+			<div data-aos="fade-left" class="sm:w-1/2 relative sm:mt-0">
+				<!-- <div style="background: #23BDEE;" class="floating w-24 h-24 absolute rounded-lg z-0 -top-3 -left-3">
+				</div>
+				<img class="rounded-xl z-40 relative" src="img/volunteer.jpg" alt="">
+				<div class="bg-yellow-500 w-40 h-40 floating absolute rounded-lg z-10 -bottom-3 -right-3"></div> -->
+			</div>
+		</div>
+
+		<div class="md:flex mt-20 md:space-x-10 items-start">
+			<div data-aos="fade-down" class="md:w-7/12 relative">
+				<div style="background: #33EFA0"
+					class="w-32 h-32 rounded-full absolute z-0 left-4 -top-12 animate-pulse"></div>
+				<div style="background: #33D9EF;"
+					class="w-5 h-5 rounded-full absolute z-0 left-36 -top-12 animate-ping"></div>
+				<img class="relative z-50 floating rounded-xl" src="img/starter.jpg" alt="">
+				<div style="background: #5B61EB;"
+					class="w-36 h-36 rounded-full absolute z-0 right-16 -bottom-1 animate-pulse"></div>
+				<div style="background: #F56666;"
+					class="w-5 h-5 rounded-full absolute z-0 right-52 bottom-1 animate-ping"></div>
+			</div>
+			<div data-aos="fade-down" class="md:w-5/12 mt-20 md:mt-0 text-gray-500">
+				<h1 class="text-3xl font-semibold text-darken lg:pr-40">Starter Pack <span class="text-yellow-500">IT #27</span> designed</h1>
+				<div class="flex items-center space-x-5 my-5">
+					<p>Project “Starter Pack for student SIT KMUTT”. It is a basic adjustment project for first-year juniors studies at the Faculty of
+						Information Technology.</p>
+				</div>
+
+				<!-- List -->
+				<!-- <div class="flex items-center space-x-5 my-5">
+					<div class="flex-shrink bg-white shadow-lg rounded-full p-3 flex items-center justify-center">
+						<svg class="w-4 h-4" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect x="8" y="6" width="20" height="20" rx="2" fill="#2F327D" />
+							<rect width="21.2245" height="21.2245" rx="2" fill="#F48C06" />
+						</svg>
+					</div>
+					<p>TA’s and presenters can be moved to the front of the class.</p>
+				</div>
+				<div class="flex items-center space-x-5 my-5">
+					<div class="flex-shrink bg-white shadow-lg rounded-full p-3 flex items-center justify-center">
+						<svg class="w-4 h-4" viewBox="0 0 30 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M4.5 11.375C6.15469 11.375 7.5 9.91758 7.5 8.125C7.5 6.33242 6.15469 4.875 4.5 4.875C2.84531 4.875 1.5 6.33242 1.5 8.125C1.5 9.91758 2.84531 11.375 4.5 11.375ZM25.5 11.375C27.1547 11.375 28.5 9.91758 28.5 8.125C28.5 6.33242 27.1547 4.875 25.5 4.875C23.8453 4.875 22.5 6.33242 22.5 8.125C22.5 9.91758 23.8453 11.375 25.5 11.375ZM27 13H24C23.175 13 22.4297 13.3605 21.8859 13.9445C23.775 15.0668 25.1156 17.093 25.4062 19.5H28.5C29.3297 19.5 30 18.7738 30 17.875V16.25C30 14.4574 28.6547 13 27 13ZM15 13C17.9016 13 20.25 10.4559 20.25 7.3125C20.25 4.16914 17.9016 1.625 15 1.625C12.0984 1.625 9.75 4.16914 9.75 7.3125C9.75 10.4559 12.0984 13 15 13ZM18.6 14.625H18.2109C17.2359 15.1328 16.1531 15.4375 15 15.4375C13.8469 15.4375 12.7688 15.1328 11.7891 14.625H11.4C8.41875 14.625 6 17.2453 6 20.475V21.9375C6 23.2832 7.00781 24.375 8.25 24.375H21.75C22.9922 24.375 24 23.2832 24 21.9375V20.475C24 17.2453 21.5812 14.625 18.6 14.625ZM8.11406 13.9445C7.57031 13.3605 6.825 13 6 13H3C1.34531 13 0 14.4574 0 16.25V17.875C0 18.7738 0.670312 19.5 1.5 19.5H4.58906C4.88438 17.093 6.225 15.0668 8.11406 13.9445Z"
+								fill="#2F327D" />
+						</svg>
+					</div>
+					<p>Teachers can easily see all students and class data at one time.</p>
+				</div> -->
+			</div>
+		</div>
+
+		<!-- Tools For Teachers And Learners -->
+		<div class="flex flex-col md:flex-row items-center md:space-x-10 mt-16">
+			<div data-aos="fade-right" class="md:w-1/2 lg:pl-14">
+				<h1 class="text-darken font-semibold text-3xl lg:pr-56"><span class="text-yellow-500">SIT volunteer 2019</span></h1>
+				<p class="text-gray-500 my-4 lg:pr-32">Representing the development and providing academic knowledge to the youngsters At a school in Suphan Buri Province for 3 days, 2 nights.</p>
+			</div>
+			<img data-aos="fade-left" class="md:w-1/2 rounded-xl" src="img/volunteer.jpg">
+		</div>
+
+		<!-- Assessments, Quizzes, Tests -->
+		<div class="mt-20 flex flex-col-reverse md:flex-row items-center md:space-x-10">
+			<div data-aos="fade-right" class="md:w-6/12">
+				<img class="md:w-full" src="img/Home.png">
+			</div>
+			<div data-aos="fade-left" class="md:w-6/12 md:transform md:-translate-y-20">
+				<h1 class="font-semibold text-darken text-3xl lg:pr-64">Design website, <span
+						class="text-yellow-500">"Cheat Sheet"</span></h1>
+				<p class="text-gray-500 my-5 lg:pr-52">In this image is a design mock up of UI design, but now this website is credits expired for deploy on server.
+					This project has an others team to develop web application include UX/UI design, Frontend developer, Backend developer and Infrastructure. 
+					And I'm working on UX/UI design with other team member on this duty.
+				</p>
+			</div>
+		</div>
+
+		<!-- Class Management Tools for Educators -->
+		<div class="flex flex-col md:flex-row items-center mt-12">
+			<div data-aos="fade-right" class="md:w-5/12">
+				<h1 class="text-darken font-semibold text-3xl leading-tight lg:pr-32"><span
+						class="text-yellow-500">SIT Playground</span> Homework Service</h1>
+				<p class="my-5 lg:pr-14">SIT playground is a project for make some tools for management or solution to solve problem from homework.
+					I am a staff and team advisor for juniors member in my faculty. My duty is to consult to create prototype and wireframe.
+				</p>
+			</div>
+			<img data-aos="fade-left" class="md:w-7/12 rounded-xl" src="img/SIT.jpg">
+		</div>
+
+		<!-- One-on-One Discussions -->
+		<!-- <div class="mt-24 flex flex-col-reverse md:flex-row items-center md:space-x-10">
+			<div data-aos="fade-right" class="md:w-7/12">
+				<img class="md:w-11/12" src="img/discussion.png">
+			</div>
+			<div data-aos="fade-left" class="md:w-5/12 md:transform md:-translate-y-6">
+				<h1 class="font-semibold text-darken text-3xl lg:pr-64">One-on-One <span
+						class="text-yellow-500">Discussions</span></h1>
+				<p class="text-gray-500 my-5 lg:pr-24">Teachers and teacher assistants can talk with students privately
+					without leaving the Zoom environment.</p>
+			</div>
+		</div>
+
+		<button data-aos="flip-up"
+			class="px-5 py-3 border border-yellow-500 text-yellow-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block">See
+			more features</button> -->
+
+		<!-- INTEGRATIONS -->
+		<!-- <div class="mt-24 flex flex-col md:flex-row items-start md:space-x-10">
+			<div data-aos="zoom-in-right" class="md:w-6/12">
+				<img class="md:w-8/12 mx-auto" src="img/integrations.png">
+			</div>
+			<div data-aos="zoom-in-left" class="md:w-6/12">
+				<div class="flex items-center space-x-20 mb-5">
+					<span class="border border-gray-300 w-14 absolute"></span>
+					<h1 class="text-gray-400 tracking-widest text-sm">INTEGRATIONS</h1>
+				</div>
+				<h1 class="font-semibold text-darken text-2xl lg:pr-40">200+ educational tools and platform <span
+						class="text-yellow-500">integrations</span></h1>
+				<p class="text-gray-500 my-5 lg:pr-20">Schoology has every tool your classroom needs and comes
+					pre-integrated with more than 200+ tools, student information systems (SIS), and education
+					platforms.</p>
+				<button
+					class="px-5 py-3 border border-yellow-500 text-yellow-500 font-medium my-4 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full">See
+					All Integrations</button>
+			</div>
+		</div> -->
+
+		<!-- TESTIMONIAL -->
+		<!-- <div class="mt-24 flex flex-col-reverse md:flex-row items-start md:space-x-10">
+			<div data-aos="zoom-in-right" class="md:w-5/12">
+				<div class="flex items-center space-x-20 mb-5">
+					<span class="border border-gray-300 w-14 absolute"></span>
+					<h1 class="text-gray-400 tracking-widest text-sm">TESTIMONIAL</h1>
+				</div>
+				<h1 class="font-semibold text-darken text-2xl lg:pr-40">What They Say?</h1>
+				<p class="text-gray-500 my-5 lg:pr-36">Skilline has got more than 100k positive ratings from our users
+					around the world.</p>
+				<p class="text-gray-500 my-5 lg:pr-36">Some of the students and teachers were greatly helped by the
+					Skilline.</p>
+				<p class="text-gray-500 my-5 lg:pr-36">Are you too? Please give your assessment</p>
+				<button
+					class="flex items-center space-x-3 pl-3 border-b border-l border-t border-yellow-500 text-yellow-500 font-medium my-4 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full">
+					<span>Write your assessment</span>
+					<div class="border border-yellow-500 h-14 w-14 rounded-full flex items-center justify-center">
+						<svg class="w-5 h-5" viewBox="0 0 26 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M25.7071 8.70711C26.0976 8.31658 26.0976 7.68342 25.7071 7.2929L19.3431 0.928934C18.9526 0.538409 18.3195 0.538409 17.9289 0.928934C17.5384 1.31946 17.5384 1.95262 17.9289 2.34315L23.5858 8L17.9289 13.6569C17.5384 14.0474 17.5384 14.6805 17.9289 15.0711C18.3195 15.4616 18.9526 15.4616 19.3431 15.0711L25.7071 8.70711ZM-8.74228e-08 9L25 9L25 7L8.74228e-08 7L-8.74228e-08 9Z"
+								fill="#F48C06" />
+						</svg>
+					</div>
+				</button>
+			</div>
+			<div data-aos="zoom-in-left" class="md:w-7/12">
+				<img class="md:w-10/12 mx-auto" src="img/testimonials.png">
+			</div>
+		</div> -->
+
+		<!-- Latest News and Resources -->
+		<!-- <div data-aos="zoom-in" class="mt-16 text-center">
+			<h1 class="text-darken text-2xl font-semibold">Latest News and Resources</h1>
+			<p class="text-gray-500 my-5">See the developments that have occurred to Skillines in the world</p>
+		</div> -->
+		<div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20">
+			<!-- <div class="lg:w-6/12">
+				<img class="w-full mb-6" src="img/laptop-news.png">
+				<span class="bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full">NEWS</span>
+				<h1 class="text-gray-800 font-semibold my-3 text-xl">Class adds $30 million to its balance sheet for a
+					Zoom-friendly edtech solution</h1>
+				<p class="text-gray-500 mb-3">Class, launched less than a year ago by Blackboard co-founder Michael
+					Chasen, integrates exclusively...</p>
+				<a href="" class="underline">Read more</a>
+			</div>
+			<div class="lg:w-7/12 flex flex-col justify-between mt-12 space-y-5 lg:space-y-0 lg:mt-0">
+				<div class="flex space-x-5">
+					<div class="w-4/12">
+						<div class="relative">
+							<img class="rounded-xl w-full" src="img/children-laptop.png">
+							<span
+								class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">PRESS
+								RELEASE</span>
+						</div>
+					</div>
+					<div class="w-8/12">
+						<h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Class Technologies Inc. Closes $30
+							Million Series A Financing to Meet High Demand</h1>
+						<p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Class Technologies Inc., the company
+							that created Class,...</p>
+					</div>
+				</div>
+				<div class="flex space-x-5">
+					<div class="w-4/12">
+						<div class="relative">
+							<img class="rounded-xl w-full" src="img/girl-laptop.png">
+							<span
+								class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NEWS</span>
+						</div>
+					</div>
+					<div class="w-8/12">
+						<h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Zoom’s earliest investors are betting
+							millions on a better Zoom for schools</h1>
+						<p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Zoom was never created to be a consumer
+							product. Nonetheless, the...</p>
+					</div>
+				</div>
+				<div class="flex space-x-5">
+					<div class="w-4/12">
+						<div class="relative">
+							<img class="rounded-xl w-full" src="img/cat-laptop.png">
+							<span
+								class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NEWS</span>
+						</div>
+					</div>
+					<div class="w-8/12">
+						<h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Former Blackboard CEO Raises $16M to
+							Bring LMS Features to Zoom Classrooms</h1>
+						<p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">This year, investors have reaped big
+							financial returns from betting on Zoom...</p>
+					</div>
+				</div>
+			</div> -->
+		</div>
+
+		<!-- Skills -->
+		<div class="max-w-4xl mx-auto">
+			<h1 id="Work" class="font-bold text-darken my-3 text-2xl text-center">Tools & Computer Languages <span class="text-yellow-500">that I use</span></h1>
+			<div class="grid grid-cols-3 lg:grid-cols-6 gap-4 justify-items-center mt-20">
+				<img class="h-7 opacity-25" src="https://www.svgrepo.com/show/305663/adobe-photoshop.svg">
+				<img class="h-7 opacity-25" src="https://www.svgrepo.com/show/305659/adobe-illustrator.svg">
+				<img class="h-7 opacity-25" src="https://www.svgrepo.com/show/315560/figma.svg">
+				<img class="h-7 opacity-25" src="https://www.svgrepo.com/show/165969/html.svg">
+				<img class="h-7 opacity-25" src="https://www.svgrepo.com/show/369594/tailwind.svg">
+				<img class="h-7 opacity-25" src="https://www.svgrepo.com/show/310932/javascript.svg">
+			</div>
+			<div class="grid grid-cols-3 lg:grid-cols-6 gap-4 justify-items-center mt-5 lg:mt-10">
+				<img class="h-7 opacity-25" src="https://www.svgrepo.com/show/394554/vuejs.svg">
+				<img class="h-7 opacity-25" src="https://www.svgrepo.com/show/369459/nodejs.svg">
+				<img class="h-7 opacity-25" src="https://www.svgrepo.com/show/394296/mysql.svg">
+				<img class="h-7 opacity-25" src="https://www.svgrepo.com/show/106553/java.svg">
+				<img class="h-7 opacity-25" src="https://www.svgrepo.com/show/306590/postman.svg">
+				<img class="h-7 opacity-25" src="https://www.svgrepo.com/show/333622/visual-studio.svg">
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- .container -->
+
+	<footer class="mt-32" style="background-color: rgba(37, 38, 65, 1);">
+		<div class="max-w-lg mx-auto">
+			<div class="flex pt-12 pb-4 justify-center text-white items-center sm:px-36">
+				<span id="Contact" class="text-2xl pl-5 py-2 font-semibold">Contact Me</span>
+			</div>
+			<div class="flex justify-center items-center ml-4 sm:px-36">
+			<img class="w-40" src="/img/line.png" /></div>
+			<div class="flex items-center text-gray-400 text-sm justify-center my-5">
+				<a href="https://www.linkedin.com/in/yanika-putorn-250737205?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B2Tl19WEkTKOgNjcUulu8QQ%3D%3D" class="pr-3">Linkedin</a>
+				<a href="https://github.com/Yanika44" class="border-l border-gray-400 px-3">GitHub</a>
+				<a href="https://www.facebook.com/yani.dear.3/" class="border-l border-gray-400 pl-3">Facebook</a>
+			</div>
+			<div class="text-center text-white">
+				<p class="my-3 text-gray-400 text-xs">&copy; 2021 Class Technologies Inc. </p>
+				<div class="py-3 tracking-wide">
+					<p class="font-extralight text-xs">Code By <span class="font-extralight text-xs">mhaecal and me</span></p>
+					<p class="font-extralight text-xs">UI/UX By <span class="font-extralight text-xs">Irvan Moses and me</span></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- AOS init -->
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+		// Get the button
+		let mybutton = document.getElementById("btn-back-to-top");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function () {
+			scrollFunction();
+		};
+
+		function scrollFunction() {
+			if (
+				document.body.scrollTop > 20 ||
+				document.documentElement.scrollTop > 20
+			) {
+				mybutton.style.display = "block";
+			} else {
+				mybutton.style.display = "none";
+			}
+		}
+		// When the user clicks on the button, scroll to the top of the document
+		mybutton.addEventListener("click", backToTop);
+
+		function backToTop() {
+			document.documentElement.scrollTo({
+				top: 0,
+				behavior: "smooth"
+			})
+			// document.body.scrollTop = 0;
+			// document.documentElement.scrollTop = 0;
+		}
+	</script>
+</body>
+
+</html>

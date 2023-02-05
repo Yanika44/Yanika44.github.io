@@ -32,6 +32,36 @@
 		}
 
 		/* CSS */
+		.button-61 {
+			background: linear-gradient(to bottom right, #F48C06, #F48C06);
+			border: 0;
+			border-radius: 12px;
+			color: #FFFFFF;
+			cursor: pointer;
+			display: inline-block;
+			font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 2.5;
+			outline: transparent;
+			padding: 0 1rem;
+			text-align: center;
+			text-decoration: none;
+			transition: box-shadow .2s ease-in-out;
+			user-select: none;
+			-webkit-user-select: none;
+			touch-action: manipulation;
+			white-space: nowrap;
+		}
+
+		.button-61:not([disabled]):focus {
+			box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+		}
+
+		.button-61:not([disabled]):hover {
+			box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+		}
+
 		.button-62 {
 			background: linear-gradient(to bottom right, #F48C06, #F48C06);
 			border: 0;
@@ -117,7 +147,7 @@
 	</button>
 
 	<div class="bg-indigo-50">
-		<div class="max-w-screen-xl px-8 mx-auto flex flex-col lg:flex-row items-start">
+		<div class="max-w-screen-xl px-8 mx-auto flex flex-col lg:flex-row items-start overflow-hidden">
 			<!--Left Col-->
 			<!-- Desktop -->
 			<div class="hidden lg:block">
@@ -142,7 +172,8 @@
 						My name is <span class="font-bold">Yanika Putorn</span> , but you can called me ' <span
 							class="font-bold">Dear</span> '. <br>
 						I am a student in the Faculty of Information Technology <br>
-						at King Mongkut’s University of Technology Thonburi (KMUTT).</p>
+						at King Mongkut’s University of Technology Thonburi (KMUTT).
+						<a href="file/YNK_resume.pdf" download="Yanika_CV" class="btn btn-primary button-62">Download my CV</a></p>
 				</div>
 			</div>
 
@@ -159,28 +190,24 @@
 						class="font-bold">Dear</span> '. <br>
 					I am a student in the Faculty of Information Technology <br>
 					at King Mongkut’s University of Technology Thonburi (KMUTT).<br>
-						<a href="file/YNK_resume.pdf" download="Yanika_CV" class="btn btn-primary button-62">Download my CV</a>
+						<a href="file/YNK_resume.pdf" download="Yanika_CV" class="btn btn-primary button-62 z-10">Download my CV</a>
 						</p>
 				</div>
 			</div>
 
 			<!-- Mobile -->
 			<div class="block lg:hidden grid justify-items-center">
-				<div class="w-full -mt-10 relative" id="girl">
-					<img data-aos="fade-up" data-aos-once="true" class="w-80 mx-auto pt-28 2xl:-mb-20"
+				<div class="w-full relative" id="girl">
+					<img data-aos="fade-up" data-aos-once="true" class="w-80 mx-auto mt-28 2xl:-mb-20"
 						src="img/girl.png" />
 				</div>
 			</div>
 
 		</div>
-		<div class="text-white -mt-14 sm:-mt-24 lg:-mt-36 z-40 relative">
-			<svg class="xl:h-40 xl:w-full" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-				preserveAspectRatio="none">
-				<path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
-					fill="currentColor"></path>
-			</svg>
+		<!-- <div class="text-white -mt-14 sm:-mt-24 lg:-mt-36 z-0 relative" style="background-image: url('img/bg.svg');">
+			
 			<div class="bg-white w-full h-20 -mt-px"></div>
-		</div>
+		</div> -->
 	</div>
 
 	<!-- container -->
@@ -189,7 +216,7 @@
 		<!-- All-In-One Cloud Software. -->
 		<div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-10">
 			<h1 id="Work" class="font-bold text-darken my-3 text-2xl">Work <span
-					class="text-yellow-500">Experiences</span></h1>
+					class="text-yellow-500">Experience</span></h1>
 			<p class="leading-relaxed text-gray-500">Since 2020 until 2022</p>
 		</div>
 		<!-- card -->

@@ -23,12 +23,46 @@
 		html {
 			scroll-behavior: smooth;
 		}
+
 		/* CSS only for demo purpose*/
 		#btn-back-to-top {
 			position: fixed;
 			display: none;
 			scroll-behavior: smooth;
 		}
+
+		/* CSS */
+		.button-62 {
+			background: linear-gradient(to bottom right, #F48C06, #F48C06);
+			border: 0;
+			border-radius: 12px;
+			color: #FFFFFF;
+			cursor: pointer;
+			display: inline-block;
+			font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 2.5;
+			outline: transparent;
+			padding: 0 1rem;
+			margin-top: 20px;
+			text-align: center;
+			text-decoration: none;
+			transition: box-shadow .2s ease-in-out;
+			user-select: none;
+			-webkit-user-select: none;
+			touch-action: manipulation;
+			white-space: nowrap;
+		}
+
+		.button-62:not([disabled]):focus {
+			box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+		}
+
+		.button-62:not([disabled]):hover {
+			box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+		}
+
 	</style>
 </head>
 
@@ -121,14 +155,12 @@
 						<span class="text-yellow-500">Hi</span> Welcome to my PORTFOLIO!
 					</h1>
 					<p data-aos="fade-down" data-aos-once="true" data-aos-delay="300"
-						class="leading-normal text-base mb-8 ml-60 mt-5">
-						My name is <span class="font-bold">Yanika Putorn</span> , but you can called me ' <span
-							class="font-bold">Dear</span> '. <br>
-						I am a student in the Faculty of Information Technology <br>
-						at King Mongkut’s University of Technology Thonburi (KMUTT).</p><br>
-						<a href="file/YNK_resume.pdf" data-aos="fade-down" data-aos-once="true" data-aos-delay="300"
-						class="leading-normal text-base mb-8 ml-60 mt-5 cursor-pointer" download>
-						<button>Download my CV</button></a>
+					class="leading-normal text-base mb-8 ml-60 mt-5">My name is <span class="font-bold">Yanika Putorn</span> , but you can called me ' <span
+						class="font-bold">Dear</span> '. <br>
+					I am a student in the Faculty of Information Technology <br>
+					at King Mongkut’s University of Technology Thonburi (KMUTT).<br>
+						<a href="file/YNK_resume.pdf" download="Yanika_CV" class="btn btn-primary button-62">Download my CV</a>
+						</p>
 				</div>
 			</div>
 
@@ -156,7 +188,8 @@
 
 		<!-- All-In-One Cloud Software. -->
 		<div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-10">
-			<h1 id="Work" class="font-bold text-darken my-3 text-2xl">Work <span class="text-yellow-500">Experiences</span></h1>
+			<h1 id="Work" class="font-bold text-darken my-3 text-2xl">Work <span
+					class="text-yellow-500">Experiences</span></h1>
 			<p class="leading-relaxed text-gray-500">Since 2020 until 2022</p>
 		</div>
 		<!-- card -->
@@ -167,8 +200,10 @@
 					<img class="w-7" src="img/vector.png" />
 				</div>
 				<h1 class="font-medium text-xl mb-3 lg:px-14 text-darken">Design and Branding</h1>
-				<p class="px-4 text-gray-500">I work on graphic design and advise about branding in Marketing units at <b>DKSH Thailand </b><br>
-					(Thailand and Global co-working)</p>
+				<p class="px-4 text-gray-500">I work on graphic design and advise about branding in Marketing units at
+					<b>DKSH Thailand </b><br>
+					(Thailand and Global co-working)
+				</p>
 			</div>
 			<div data-aos="fade-up" class="bg-white shadow-xl p-6 text-center rounded-xl">
 				<div style="background: #29B9E7;"
@@ -181,7 +216,8 @@
 					<img class="w-7" src="img/ux.png" />
 				</div>
 				<h1 class="font-medium text-xl mb-3 lg:px-14 text-darken">UX/UI & Graphic Designer</h1>
-				<p class="px-4 text-gray-500">Internship at <b>MFEC Public Company Limited</b>, where I do in the position of UX/UI and Graphic Designer</p>
+				<p class="px-4 text-gray-500">Internship at <b>MFEC Public Company Limited</b>, where I do in the
+					position of UX/UI and Graphic Designer</p>
 			</div>
 			<div data-aos="fade-up" data-aos-delay="150" class="bg-white shadow-xl p-6 text-center rounded-xl">
 				<div style="background: #F48C06;"
@@ -189,7 +225,8 @@
 					<img class="w-7" src="img/ux.png" />
 				</div>
 				<h1 class="font-medium text-xl mb-3 lg:px-14 text-darken">UX/UI Designer</h1>
-				<p class="px-4 text-gray-500">Web CeatSheet for IT KMUTT Student. It is a repository of summaries for subjects within the Faculty of
+				<p class="px-4 text-gray-500">Web CeatSheet for IT KMUTT Student. It is a repository of summaries for
+					subjects within the Faculty of
 					Information Technology juniors and everyone in the faculty.</p>
 			</div>
 		</div>
@@ -201,7 +238,8 @@
 					<img class="w-7" src="img/multimedia.png" />
 				</div>
 				<h1 class="font-medium text-xl mb-3 lg:px-14 text-darken">Graphic Designer and Media</h1>
-				<p class="px-4 text-gray-500">Project “Starter Pack for student SIT KMUTT”. It is a basic adjustment project for first-year juniors studying at the Faculty of
+				<p class="px-4 text-gray-500">Project “Starter Pack for student SIT KMUTT”. It is a basic adjustment
+					project for first-year juniors studying at the Faculty of
 					Information Technology.</p>
 			</div>
 			<div data-aos="fade-up" data-aos-delay="150" class="bg-white shadow-xl p-6 text-center rounded-xl">
@@ -210,7 +248,8 @@
 					<img class="w-7" src="img/window.png" />
 				</div>
 				<h1 class="font-medium text-xl mb-3 lg:px-14 text-darken">Integrated and Senior Project</h1>
-				<p class="px-4 text-gray-500">This is an experience at my faculty to improve my coding skills. My role is a Backend developer to develop web applications.
+				<p class="px-4 text-gray-500">This is an experience at my faculty to improve my coding skills. My role
+					is a Backend developer to develop web applications.
 				</p>
 			</div>
 			<div data-aos="fade-up" data-aos-delay="300" class="bg-white shadow-xl p-6 text-center rounded-xl">
@@ -219,15 +258,18 @@
 					<img class="w-7" src="img/working.png" />
 				</div>
 				<h1 class="font-medium text-xl lg:px-14 text-darken h-10">Freelance</h1>
-				<p class="px-4 text-gray-500">It's a graphic designer for general work consisting of web page design and design of advertising media for some products.</p>
+				<p class="px-4 text-gray-500">It's a graphic designer for general work consisting of web page design and
+					design of advertising media for some products.</p>
 			</div>
 		</div>
 
 		<!-- lorem -->
 		<div class="mt-28">
 			<div data-aos="flip-down" class="text-center max-w-screen-md mx-auto">
-				<h1 id="Act" class="text-3xl font-bold mb-4">My activities<span class="text-yellow-500"> in University</span></h1>
-				<p class="text-gray-500">I'm always looking for new hobbies or activities to do in my free time to help me reach my full potential at work. You can see it below.</p>
+				<h1 id="Act" class="text-3xl font-bold mb-4">My activities<span class="text-yellow-500"> in
+						University</span></h1>
+				<p class="text-gray-500">I'm always looking for new hobbies or activities to do in my free time to help
+					me reach my full potential at work. You can see it below.</p>
 			</div>
 			<!-- Card click -->
 			<!-- <div data-aos="fade-up"
@@ -289,9 +331,11 @@
 					class="w-5 h-5 rounded-full absolute z-0 right-52 bottom-1 animate-ping"></div>
 			</div>
 			<div data-aos="fade-down" class="md:w-5/12 mt-20 md:mt-0 text-gray-500">
-				<h1 class="text-3xl font-semibold text-darken lg:pr-40">Starter Pack <span class="text-yellow-500">IT #27</span> designed</h1>
+				<h1 class="text-3xl font-semibold text-darken lg:pr-40">Starter Pack <span class="text-yellow-500">IT
+						#27</span> designed</h1>
 				<div class="flex items-center space-x-5 my-5">
-					<p>Project “Starter Pack for student SIT KMUTT”. It is a basic adjustment project for first-year juniors studying at the Faculty of
+					<p>Project “Starter Pack for student SIT KMUTT”. It is a basic adjustment project for first-year
+						juniors studying at the Faculty of
 						Information Technology.</p>
 				</div>
 
@@ -321,8 +365,10 @@
 		<!-- Tools For Teachers And Learners -->
 		<div class="flex flex-col md:flex-row items-center md:space-x-10 mt-16">
 			<div data-aos="fade-right" class="md:w-1/2 lg:pl-14">
-				<h1 class="text-darken font-semibold text-3xl lg:pr-56"><span class="text-yellow-500">SIT volunteer 2019</span></h1>
-				<p class="text-gray-500 my-4 lg:pr-32">Representing the development and providing academic knowledge to the youngsters At a school in Suphan Buri Province for 3 days, and 2 nights.</p>
+				<h1 class="text-darken font-semibold text-3xl lg:pr-56"><span class="text-yellow-500">SIT volunteer
+						2019</span></h1>
+				<p class="text-gray-500 my-4 lg:pr-32">Representing the development and providing academic knowledge to
+					the youngsters At a school in Suphan Buri Province for 3 days, and 2 nights.</p>
 			</div>
 			<img data-aos="fade-left" class="md:w-1/2 rounded-xl" src="img/volunteer.jpg">
 		</div>
@@ -335,7 +381,10 @@
 			<div data-aos="fade-left" class="md:w-6/12 md:transform md:-translate-y-20">
 				<h1 class="font-semibold text-darken text-3xl lg:pr-64">Design website, <span
 						class="text-yellow-500">"Cheat Sheet"</span></h1>
-				<p class="text-gray-500 my-5 lg:pr-52">This image is a design mock-up of UI design, but now this website's credits expired for deployment on the server. This project has another team developing web applications including UX/UI design, Frontend development, Backend developer, and Infrastructure. And I'm working on UX/UI design with other team members on this duty.
+				<p class="text-gray-500 my-5 lg:pr-52">This image is a design mock-up of UI design, but now this
+					website's credits expired for deployment on the server. This project has another team developing web
+					applications including UX/UI design, Frontend development, Backend developer, and Infrastructure.
+					And I'm working on UX/UI design with other team members on this duty.
 				</p>
 			</div>
 		</div>
@@ -343,9 +392,11 @@
 		<!-- Class Management Tools for Educators -->
 		<div class="flex flex-col md:flex-row items-center mt-12">
 			<div data-aos="fade-right" class="md:w-5/12">
-				<h1 class="text-darken font-semibold text-3xl leading-tight lg:pr-32"><span
-						class="text-yellow-500">SIT Playground</span> Homework Service</h1>
-				<p class="my-5 lg:pr-14">SIT playground is a project for making some tools for management or solution to solve problems from the homework. I am a staff and team advisor for juniors member of my faculty. My duty is to consult to create prototypes and wireframes.
+				<h1 class="text-darken font-semibold text-3xl leading-tight lg:pr-32"><span class="text-yellow-500">SIT
+						Playground</span> Homework Service</h1>
+				<p class="my-5 lg:pr-14">SIT playground is a project for making some tools for management or solution to
+					solve problems from the homework. I am a staff and team advisor for juniors member of my faculty. My
+					duty is to consult to create prototypes and wireframes.
 				</p>
 			</div>
 			<img data-aos="fade-left" class="md:w-7/12 rounded-xl" src="img/SIT.jpg">
@@ -356,9 +407,12 @@
 				<img class="md:w-full rounded-xl" src="img/internship_sayHi.JPG">
 			</div>
 			<div data-aos="fade-left" class="md:w-6/12 md:transform md:-translate-y-20">
-				<h1 class="font-semibold text-darken text-3xl lg:pr-64">Speaker,<br> 
-					<span class="text-yellow-500">"Internship Say Hi"</span></h1>
-				<p class="text-gray-500 my-5 lg:pr-52">Tell about internship experience or working for juniors within the faculty including giving some tricks and advice on preparing for internships or working in the future.
+				<h1 class="font-semibold text-darken text-3xl lg:pr-64">Speaker,<br>
+					<span class="text-yellow-500">"Internship Say Hi"</span>
+				</h1>
+				<p class="text-gray-500 my-5 lg:pr-52">Tell about internship experience or working for juniors within
+					the faculty including giving some tricks and advice on preparing for internships or working in the
+					future.
 				</p>
 			</div>
 		</div>
@@ -498,7 +552,8 @@
 
 		<!-- Skills -->
 		<div class="max-w-4xl mx-auto">
-			<h1 id="Work" class="font-bold text-darken my-3 text-2xl text-center">Tools & Computer Languages <span class="text-yellow-500">that I use</span></h1>
+			<h1 id="Work" class="font-bold text-darken my-3 text-2xl text-center">Tools & Computer Languages <span
+					class="text-yellow-500">that I use</span></h1>
 			<div class="grid grid-cols-3 lg:grid-cols-6 gap-4 justify-items-center mt-20">
 				<img class="h-7 opacity-25" src="https://www.svgrepo.com/show/305663/adobe-photoshop.svg">
 				<img class="h-7 opacity-25" src="https://www.svgrepo.com/show/305659/adobe-illustrator.svg">
@@ -526,17 +581,22 @@
 				<span id="Contact" class="text-2xl pl-5 py-2 font-semibold">Contact Me</span>
 			</div>
 			<div class="flex justify-center items-center ml-4 sm:px-36">
-			<img class="w-40" src="img/line.png" /></div>
+				<img class="w-40" src="img/line.png" />
+			</div>
 			<div class="flex items-center text-gray-400 text-sm justify-center my-5">
-				<a href="https://www.linkedin.com/in/yanika-putorn-250737205?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B2Tl19WEkTKOgNjcUulu8QQ%3D%3D" class="pr-3"><u>Linkedin</u></a>
+				<a href="https://www.linkedin.com/in/yanika-putorn-250737205?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B2Tl19WEkTKOgNjcUulu8QQ%3D%3D"
+					class="pr-3"><u>Linkedin</u></a>
 				<a href="https://github.com/Yanika44" class="border-l border-gray-400 px-3"><u>GitHub</u></a>
-				<a href="https://www.facebook.com/yani.dear.3/" class="border-l border-gray-400 pl-3"><u>Facebook</u></a>
+				<a href="https://www.facebook.com/yani.dear.3/"
+					class="border-l border-gray-400 pl-3"><u>Facebook</u></a>
 			</div>
 			<div class="text-center text-white">
 				<p class="my-3 text-gray-400 text-xs">&copy; 2021 Class Technologies Inc. </p>
 				<div class="py-3 tracking-wide">
-					<p class="font-extralight text-xs">Code By <span class="font-extralight text-xs">mhaecal and me</span></p>
-					<p class="font-extralight text-xs">UI/UX By <span class="font-extralight text-xs">Irvan Moses and me</span></p>
+					<p class="font-extralight text-xs">Code By <span class="font-extralight text-xs">mhaecal and
+							me</span></p>
+					<p class="font-extralight text-xs">UI/UX By <span class="font-extralight text-xs">Irvan Moses and
+							me</span></p>
 				</div>
 			</div>
 		</div>
